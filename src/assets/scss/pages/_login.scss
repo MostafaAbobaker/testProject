@@ -1,0 +1,92 @@
+@use "../abstracts" as *;
+
+.login-page {
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+    @include mqMax(md ){
+                background-color: var(--primary-color);
+
+        &::before , &::after {
+            content: '';
+            position: absolute;
+            background: url(../../imgs/grid-01.svg) no-repeat;
+            background-size: contain;
+            width: 50%;
+            height: 50%;
+        }
+        &::before {
+            top:0;
+            inset-inline-end: 0;
+        }
+        &::after {
+            bottom: 0;
+            inset-inline-start: 0;
+            transform: rotate(180deg);
+        }
+    }
+    .login-content {
+        width: 500px;
+        padding: rem(40);
+       @include mqMax(md ){
+        width: 95%;
+        margin: auto;
+        background-color: color-mix(in srgb, var(--white-color) 6%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        border-radius: rem(16);
+        border: 2px solid var(--gray-400-color);
+        color: var(--white-color);
+       }
+       h2 {
+        @include mqMax(md ) {
+            color: var(--white-color);
+        }
+       }
+        .form-group {
+            label {
+                span {
+                    font-size: rem(16);
+                    font-weight: 500;
+                    color: var(--error-500-color);
+                    
+                }
+            }
+        }
+        .email-input , .password-input {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 50%;
+                inset-inline-start: 0;
+                transform: translateY(-50%);
+                padding: rem(16);
+                font-family: "Font Awesome 7 Free";
+                font-size: rem(20);
+                @include mqMax(md) {
+            color: var(--gray-800-color);
+            }
+            }
+        }
+        .email-input {
+            &::before {
+                content: "\f0e0";
+                font-weight: 400;
+            }
+        }
+        .password-input {
+            &::before {
+                content: "\f13e";
+                font-weight: 900;
+            }
+        }
+        .form-control {
+            padding-block: rem(16);
+            border-radius: rem(12);
+            padding-inline-start: rem(52);
+            font-size: rem(20);
+            font-weight: 500;
+        }
+    }
+}

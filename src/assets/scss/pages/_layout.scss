@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.master-page {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: var(--sidebar-width-xl) 1fr;
+    transition: all 0.3s ease-in-out;
+    &.ful-page {
+        grid-template-columns: var(--sidebar-width-sm) 1fr;
+    }
+    @include mqMax(lg) {
+        grid-template-columns: var(--sidebar-width-sm) 1fr;
+    }
+    .page-content {
+        padding: rem(24);
+        @include mqMax(lg) {
+        padding: rem(16);
+    }
+    }
+}

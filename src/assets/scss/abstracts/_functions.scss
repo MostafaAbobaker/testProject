@@ -1,0 +1,29 @@
+
+@use "variables" as *;
+
+/* !*************************  Start Convert PX To REM *******************************************/
+
+@function rem($px-value) {
+	@return (calc($px-value / 16)) + rem;
+}
+/* !*************************  End Convert PX To REM *******************************************/
+
+
+/* !************************* Start Media Query Screen Size ******************/
+
+/* Result
+  :root {
+    --lg: 1200px;
+  }
+*/
+:root {
+    
+    // Media Query Screen Size
+    @each $size, $value in $breakpoints {
+      --#{$size}: #{$value};
+    }
+  }
+
+/* !************************* End Media Query Screen Size ******************/
+
+

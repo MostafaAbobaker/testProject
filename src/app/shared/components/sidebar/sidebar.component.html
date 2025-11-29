@@ -1,0 +1,28 @@
+<aside class="sidebar collapsed" id="sidebar" [ngClass]="{'collapsed': isCollapsed}" >
+    <header class="header-sidebar">
+        <a class="logo" routerLink="/">
+            <span class="logo-icon">
+              <img src="../../../../assets/imgs/logo-icon.svg" alt="" class="logo-icon">
+            </span>
+            <span class="logo-text">
+              <img src="./assets/imgs/TestAdminB.svg" alt="" class="text-logo">
+            </span>
+          </a>
+    </header>
+    
+  <ul>
+    <li >
+      <a class="active" routerLink="/dashboard" routerLinkActive="active">
+        <span class="icon"><i class="fa-solid fa-chart-line fa-fw"></i></span>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a class="" routerLink="/users" routerLinkActive="active">
+        <span class="icon"><i class="fa-solid fa-users fa-fw"></i></span>
+        <span class="text">Users</span>
+      </a>
+    </li>
+   
+  </ul>
+</aside>

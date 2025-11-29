@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+.p-paginator
+.p-paginator-page.p-paginator-page-selected , .p-paginator
+.p-select-option.p-select-option-selected {
+    background:color-mix(in srgb, var(--primary-color-light) 10%, transparent);
+    color: var(--primary-color-light);
+}
+.p-paginator
+.p-select:not(.p-disabled).p-focus {
+    border-color: var(--primary-color-light);
+}
+.p-paginator
+.p-select-option.p-select-option-selected.p-focus {
+        background:color-mix(in srgb, var(--primary-color-light) 20%, transparent);
+
+}
+.p-datatable-table
+.p-datatable-thead > tr > th.p-datatable-column-sorted {
+    background:color-mix(in srgb, var(--primary-color-light) 10%, transparent);
+    color: var(--primary-color-light);
+}

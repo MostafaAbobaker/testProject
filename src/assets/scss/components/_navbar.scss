@@ -1,0 +1,57 @@
+@use '../abstracts' as *;
+.navbar {
+    background-color: var(--white-color);
+    border-bottom: rem(1) solid var(--gray-200-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    padding-inline-start:  rem(16);
+    .logo-sm {
+        display: none;
+    }
+    .toggle-btn {
+        border: none;
+        background-color: transparent;
+        border: rem(1) solid var(--gray-200-color);
+        padding: rem(8);
+        border-radius: rem(8);
+    }
+    .user-nav {
+        background-color: var(--gray-50-color);
+        padding: rem(8);
+        .user-avatar {
+            
+            img {
+                width: rem(30);
+            height: rem(30);
+            border-radius: 50%;
+            margin-inline-end: rem(8);
+            }
+            
+        }
+        .user-name {
+            h6 {
+                font-size: rem(14);
+                font-weight: 500;
+                margin-bottom: rem(4);
+            }
+                
+            }
+    }
+    .topbar-menu {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            img {
+                width: rem(40);
+                height: rem(40);
+                border-radius: 50%;
+            }
+        }
+    }
+}

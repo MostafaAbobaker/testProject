@@ -1,0 +1,29 @@
+
+$fs-main: 16px;
+
+:root{
+    --fs-main:16px;
+    --sidebar-width-xl: 250px;
+    --sidebar-width-sm: 80px;
+
+    --primary-color: #161950;
+    --primary-color-light: #465fff;
+    --white-color: #fff;
+    --error-500-color: #f04438;
+    --gray-50-color: #f9fafb;
+    --gray-100-color: #f2f4f7;
+    --gray-200-color: #e4e7ec;
+    --gray-400-color: #98a2b3;
+    --gray-500-color: #667085;
+    --gray-700-color: #344054;
+    --gray-800-color: #1d2939;
+}
+
+$breakpoints: (
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  xxl: 1399px,
+  xxxl: 1599px,
+);

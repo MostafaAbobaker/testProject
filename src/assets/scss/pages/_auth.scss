@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100dvh;
+    @include mqMax(md) {
+            grid-template-columns:  1fr;
+            
+    }
+    .auth-side {
+        background-color: var(--primary-color);
+        display: grid;
+        place-items: center;
+        
+        position: relative;
+        @include mqMax(md) {
+            display: none;
+        }
+        &::before , &::after {
+            content: '';
+            position: absolute;
+            background: url(../../imgs/grid-01.svg) no-repeat;
+            background-size: contain;
+            width: 50%;
+            height: 50%;
+             
+        }
+        &::before {
+            top:0;
+            inset-inline-end: 0;
+        }
+        &::after {
+            bottom: 0;
+            inset-inline-start: 0;
+            transform: rotate(180deg);
+        }
+        .logo-content {
+
+            .logo-image {
+                display: flex;
+                align-items: center;
+                font-size: clamp(1.8rem, 5vw + 1rem, 3.75rem);
+                margin-bottom: rem(16);
+                 img{
+                    margin-inline-end: rem(16) ;
+                    // width: rem(60);
+                    // height: rem(60);
+                }
+            }
+            h1 {
+                color: var(--white-color);
+            }
+            p {
+                font-size: rem(16);
+                font-size: clamp(0.9rem, 1vw + 0.4rem, 1rem);
+                color: var(--gray-400-color);
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+.users-page {
+    .header-page {
+        margin-bottom: rem(24);
+        h3 {
+            color: var(--gray-800-color);
+        }
+    }
+}

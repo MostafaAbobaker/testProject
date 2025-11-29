@@ -1,0 +1,35 @@
+<nav class="navbar">
+
+  <a href="#" class="logo-sm">
+    <img src="./assets/imgs/TestAdminB.svg" alt="logo" class="logo-Text">
+  </a>
+
+  <!-- <button class="sidebar-toggle" type="button" onclick="slideBtn()">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button> -->
+  <button class="toggle-btn"  (click)="toggleSidebar()"><i class="fa-solid fa-bars fa-fw"></i></button>
+
+
+
+  <ul class="topbar-menu ms-auto">
+    
+    
+    
+    <li class="dropdown user-nav">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="user-avatar"><img src="../../../../assets/imgs/user.png" alt="user photo"></span>
+        <span class="user-name d-none d-md-inline">
+          <h6>{{email}}</h6>
+          <small>Admin</small>
+        </span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="fi fi-rr-circle-user"></i> My Account</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fi fi-rr-settings"></i> Settings</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fi fi-rr-life-ring"></i> Support</a></li>
+        <li><a class="dropdown-item" (click)="logout()"><i class="fi fi-rr-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>

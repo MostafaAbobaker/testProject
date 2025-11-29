@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use "variables" as *;
+
+/* !************************* Start Media Query View Screen ********************************/
+
+/* Result For Example
+  .text {
+    @include mqMin(lg) {
+      color: #f00;
+    }
+    @include mqMax(lg) {
+      background-color: #f0f;
+    }
+}
+*/
+
+// media query
+
+@mixin mqMin($key) {
+  $size: map.get($breakpoints, $key);
+
+  @if ($size) {
+
+    @media (width > $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+@mixin mqMax($key) {
+  $size: map.get($breakpoints, $key);
+
+  @if ($size) {
+    @media (width < $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+
+/* !************************* End Media Query View Screen ********************************/
