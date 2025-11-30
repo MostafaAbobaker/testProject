@@ -38,12 +38,15 @@ export class UsersComponent implements OnInit, OnDestroy{
         this.usersList = data;
         console.log(data);
       } , error:(err)=>{
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: err.message,sticky: true });
       }
     })
   }
 
- 
+  retryCall(){
+    this.getUsers();
+     this.messageService.clear('confirm');
+  }
 
     ngOnDestroy(): void {
       if(this.userSupscrption){

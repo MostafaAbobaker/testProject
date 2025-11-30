@@ -19,3 +19,52 @@
     background:color-mix(in srgb, var(--primary-color-light) 10%, transparent);
     color: var(--primary-color-light);
 }
+.p-datatable .p-datatable-header ,
+ .p-datatable .p-datatable-thead > tr > th ,
+  .p-datatable .p-datatable-tbody > tr ,
+  .p-datatable   .p-datatable-tbody > tr > td,
+  .p-datatable  .p-select ,
+  .p-datatable  .p-select-overlay
+  {
+    background: var(--white-color);
+    color: var(--gray-800-color);
+    border-color: #e2e8f0;
+}
+.p-datatable
+.p-paginator {
+    background: var(--white-color);
+    color: var(--gray-800-color);
+    border-color: #e2e8f0;
+    border-radius: 0;
+}
+.p-datatable  .p-select-label {
+    color: var(--gray-800-color);
+}
+.p-datatable .p-select-option.p-select-option-selected.p-focus {
+    color: var(--primary-color-light);
+}
+.p-datatable  .p-select-option:not(.p-select-option-selected):not(.p-disabled).p-focus {
+    background: var(--gray-100-color);
+    color: var(--gray-800-color);
+}
+.p-datatable .p-select-option {
+        color: var(--gray-800-color);
+
+}
+
+.p-datatable .p-datatable-sortable-column:not(.p-datatable-column-sorted):hover {
+    background: var(--gray-100-color);
+    color: var(--gray-800-color);
+}
+
+.p-datatable .p-paginator-page:not(.p-disabled):not(.p-paginator-page-selected):hover,
+.p-datatable  .p-paginator-first:not(.p-disabled):hover, .p-paginator-prev:not(.p-disabled):hover, 
+.p-datatable  .p-paginator-next:not(.p-disabled):hover, .p-paginator-last:not(.p-disabled):hover,
+.p-datatable  .p-paginator-last:not(.p-disabled):hover  {
+    background: var(--gray-100-color);
+    color: var(--gray-800-color);
+}
+
+.p-datatable .p-select.p-disabled {
+    background: var(--white-color);
+}

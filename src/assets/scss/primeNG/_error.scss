@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+ .p-toast-message-error .p-toast-message-content .p-toast-detail {
+    color: var(--error-500-color);
+}
+@include mqMax(sm) {
+.p-toast.p-component.p-toast-top-right {
+    width: 90%;
+}
+}

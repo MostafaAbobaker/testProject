@@ -95,4 +95,14 @@
     </div>
   </div>
 </section>
-<p-toast />
+
+<p-toast >
+    <ng-template let-message #message>
+            <div class="flex flex-col items-start flex-auto">
+                <h6 class="text-danger">{{ message.summary }}</h6>
+                <div class="font-medium text-lg my-4">{{ message.detail }}</div>
+                    <button class="btn btn-danger btn-sm" (click)="retryCall()">Retry Call Endpoint</button>
+
+            </div>
+        </ng-template>
+</p-toast>
