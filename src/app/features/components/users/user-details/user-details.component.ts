@@ -41,7 +41,7 @@ export class UserDetailsComponent  {
         console.log(this.userDetails);
       } , error:(err)=>{
         console.log(err);
-                this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
 
 
       }
@@ -54,8 +54,7 @@ export class UserDetailsComponent  {
         this.posts = data as Post[];
         console.log(this.posts);
       } , error:(err)=>{
-                this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
-
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
       }
     })
   }
