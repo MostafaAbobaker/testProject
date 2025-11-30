@@ -8,9 +8,7 @@
     width: var(--sidebar-width-xl);
     border-inline-end: rem(1) solid var(--gray-200-color);
     overflow: hidden;
-    @include mqMax(lg) {
-        width: var(--sidebar-width-sm) ;
-    }
+    
     .header-sidebar {
         padding: rem(10) rem(20) ;
         .logo-text {
@@ -88,16 +86,15 @@
                 }
             }
         }
-    }
-    @include mqMax(lg) {
-        width: var(--sidebar-width-sm);
-        .header-sidebar {
-            padding: rem(10) rem(20) ;
+        @include mqMax(md) {
+            inset-inline-start: rem(0);
+            width: var(--sidebar-width-xl);
+            .header-sidebar {
             .logo-text {
-                display: none;
+                display: block;
             }
             .logo-icon {
-                display: block;
+                display: none;
             }
         }
         ul {
@@ -106,11 +103,17 @@
             }
             li {
                 a {
-                    padding: rem(10) rem(10);
-                    gap: rem(40);
+                    padding: rem(10) rem(20);
+                    gap: rem(20);
                 }
             }
         }
-    
+        }
+    }
+    @include mqMax(md) {
+        position: fixed;
+        inset-inline-start: rem(-300);
+        top: 0;
+        z-index: 999;
     }
 }

@@ -8,14 +8,32 @@
     transition: all 0.3s ease-in-out;
     &.ful-page {
         grid-template-columns: var(--sidebar-width-sm) 1fr;
+        @include mqMax(md) {
+            .overlay {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 900;
+                    transition: all 0.3s ease-in-out;
+
+            }
+        }
     }
-    @include mqMax(lg) {
-        grid-template-columns: var(--sidebar-width-sm) 1fr;
+    @include mqMax(md) {
+        display: flex;
+        width: 100%;
+        grid-template-columns:  1fr;
+        .content {
+            width: 100%;
+        }
+        
     }
     .page-content {
         padding: rem(24);
         @include mqMax(lg) {
-        padding: rem(16);
-    }
+            padding: rem(16);
+        }
     }
 }

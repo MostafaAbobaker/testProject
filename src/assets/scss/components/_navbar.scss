@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-.navbar {
+.navbar-item {
     background-color: var(--white-color);
     border-bottom: rem(1) solid var(--gray-200-color);
     display: flex;

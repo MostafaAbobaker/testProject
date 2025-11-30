@@ -1,101 +1,146 @@
 <section class="user-details-page users-page">
-    <div class="container-fluid">
-        <header class="header-page d-flex justify-content-between align-items-center">
-            <h4>Users Details</h4>
-            <a class="btn btn-secondary" routerLink="/users"> <i class="fa-solid fa-arrow-left-long fa-fw me-2"></i> Back</a>
-        </header>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">
-                            <img src="../../../../../assets/imgs/user.png" alt="" width="40px" height="40px"
-                                class="rounded-circle me-2">
-                            {{userDetails.name}}
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">User Name</label>
-                                    <input type="text" class="form-control" id="username" readonly disabled value="{{userDetails.username}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" readonly disabled value="{{userDetails.email}}">
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <p-accordion value="0">
-                            <p-accordion-panel value="0">
-                                <p-accordion-header><span><i class="fa-solid fa-location-dot me-2"></i>Address</span></p-accordion-header>
-                                <p-accordion-content>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="city" class="form-label">City</label>
-                                                <input type="text" class="form-control" id="city" readonly disabled value="{{userDetails.address.city}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="street" class="form-label">Street</label>
-                                                <input type="text" class="form-control" id="street" readonly disabled value="{{userDetails.address.street}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="suite" class="form-label">Suite</label>
-                                                <input type="text" class="form-control" id="suite" readonly disabled value="{{userDetails.address.suite}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="zipcode" class="form-label">Zip Code</label>
-                                                <input type="text" class="form-control" id="zipcode" readonly disabled value="{{userDetails.address.zipcode}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </p-accordion-content>
-                            </p-accordion-panel>
-
-                            
-
-                            <p-accordion-panel value="1">
-                                <p-accordion-header><span><i class="fa-regular fa-building me-2"></i>Company</span></p-accordion-header>
-                                <p-accordion-content>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="companyName" class="form-label">Company name</label>
-                                                <input type="text" class="form-control" id="companyName" readonly disabled value="{{userDetails.company.name}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="catchPhrase" class="form-label">Catch Phrase</label>
-                                                <input type="text" class="form-control" id="catchPhrase" readonly disabled value="{{userDetails.company.catchPhrase}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="bs" class="form-label">Catch Phrase</label>
-                                                <input type="text" class="form-control" id="bs" readonly disabled value="{{userDetails.company.bs}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </p-accordion-content>
-                            </p-accordion-panel>
-                        </p-accordion>
-
-                    </div>
+  <div class="container-fluid">
+    <header class="header-page d-flex justify-content-between align-items-center">
+      <h4>Users Details</h4>
+      <a class="btn btn-secondary" routerLink="/users"> <i class="fa-solid fa-arrow-left-long fa-fw me-2"></i> Back</a>
+    </header>
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">
+              <img src="./assets/imgs/user.png" alt="" width="40px" height="40px"
+                class="rounded-circle me-2">
+              {{userDetails.name}}
+            </h4>
+          </div>
+          <div class="card-body">
+            
+            <p-accordion >
+              <p-accordion-panel value="0">
+                <p-accordion-header><span><i class="fa-regular fa-user me-2"></i>Personal</span></p-accordion-header>
+                <p-accordion-content>
+                  @if(userDetails){
+                    <div class="row" >
+                  
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label for="username" class="form-label">User Name</label>
+                  <input type="text" class="form-control" id="username" readonly disabled
+                    value="{{userDetails.username}}">
                 </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" readonly disabled value="{{userDetails.email}}">
+                </div>
+              </div>
             </div>
+          }
+                </p-accordion-content>
+              </p-accordion-panel>
+              <p-accordion-panel value="1">
+                <p-accordion-header><span><i
+                      class="fa-solid fa-location-dot me-2"></i>Address</span></p-accordion-header>
+                <p-accordion-content>
+                  @if(userDetails.address){
+                    <div class="row" >
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="city" class="form-label">City</label>
+                          <input type="text" class="form-control" id="city" readonly disabled
+                            value="{{userDetails.address.city}}">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="street" class="form-label">Street</label>
+                          <input type="text" class="form-control" id="street" readonly disabled
+                            value="{{userDetails.address.street}}">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="suite" class="form-label">Suite</label>
+                          <input type="text" class="form-control" id="suite" readonly disabled
+                            value="{{userDetails.address.suite}}">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="zipcode" class="form-label">Zip Code</label>
+                          <input type="text" class="form-control" id="zipcode" readonly disabled
+                            value="{{userDetails.address.zipcode}}">
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </p-accordion-content>
+              </p-accordion-panel>
+
+
+
+              <p-accordion-panel value="2">
+                <p-accordion-header><span><i class="fa-regular fa-building me-2"></i>Company</span></p-accordion-header>
+                <p-accordion-content>
+                  @if(userDetails.company){
+
+                    <div class="row" >
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="companyName" class="form-label">Company name</label>
+                          <input type="text" class="form-control" id="companyName" readonly disabled
+                            value="{{userDetails.company.name}}">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="catchPhrase" class="form-label">Catch Phrase</label>
+                          <input type="text" class="form-control" id="catchPhrase" readonly disabled
+                            value="{{userDetails.company.catchPhrase}}">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label for="bs" class="form-label">Catch Phrase</label>
+                          <input type="text" class="form-control" id="bs" readonly disabled
+                            value="{{userDetails.company.bs}}">
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </p-accordion-content>
+              </p-accordion-panel>
+            </p-accordion>
+
+          </div>
         </div>
+      </div>
+      <hr>
+      <div class="col-lg-12">
+        <!-- posts -->
+         <h4 class="mb-3">Posts</h4>
+         @for(post of posts; track post.id){
+          <div class="card-post mb-3" >
+              <div class="image">
+                <img src="https://dummyimage.com/100x100/eee/aaa" class="img-fluid object-fit-cover" alt="...">
+              </div>
+                <div class="card-body">
+                  <h6 class="card-title">{{post.title}}</h6>
+                  <p class="card-text">{{post.body}}</p>
+                </div>
+              
+          </div>
+         } @empty{
+          <div class="error-s">
+            <i><img src="./assets/imgs/NoDataFound.svg" alt=""/></i>
+            <h1><span>No</span> Data Found <span>!</span></h1>
+            </div>
+         }
+      </div>
     </div>
+  </div>
 
 </section>
+<p-toast />

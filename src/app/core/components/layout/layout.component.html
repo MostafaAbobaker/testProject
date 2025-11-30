@@ -1,5 +1,5 @@
 <app-loading></app-loading>
-<main class="master-page" [class.ful-page]="isCollapsed">
+<main class="master-page" [class.ful-page]="isCollapsed$ | async">
     <app-sidebar></app-sidebar>
     <div class="content">
         <app-navbar></app-navbar>
@@ -7,4 +7,5 @@
             <router-outlet></router-outlet>
         </div>
     </div>
+    <div class="overlay" (click)="closeSidebar()"></div>
 </main>

@@ -20,14 +20,7 @@ export const routes: Routes = [
                 path: 'users',
                 loadComponent: () => import('./features/components/users/users.component').then((mod) => mod.UsersComponent),
             },
-            {
-                path:'add-user',
-                loadComponent: () => import('./features/components/users/adduser/adduser.component').then((mod) => mod.AdduserComponent),
-            },
-            {
-                path:'edit-user/:id',
-                loadComponent: () => import('./features/components/users/adduser/adduser.component').then((mod) => mod.AdduserComponent),
-            },
+            
             {
                 path:'user-details/:id',
                 loadComponent: () => import('./features/components/users/user-details/user-details.component').then((mod) => mod.UserDetailsComponent),

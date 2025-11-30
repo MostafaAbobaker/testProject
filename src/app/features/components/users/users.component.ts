@@ -4,15 +4,19 @@ import { UsersService } from './services/users.service';
 import { Subscription } from 'rxjs';
 import { Users } from './interface/users';
 import { RouterModule } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-users',
-  imports: [TableModule,RouterModule],
+  imports: [TableModule,RouterModule,ToastModule],
   templateUrl: './users.component.html',
-  styleUrl: './users.component.scss'
+  styleUrl: './users.component.scss',
+  providers: [MessageService]
 })
 export class UsersComponent implements OnInit, OnDestroy{
   usersList: Users[] = [];
+
   PageNumber = 0;
   PageSize = 5;
   first = 0;
@@ -20,7 +24,8 @@ export class UsersComponent implements OnInit, OnDestroy{
   totalRecords: number = 0;
 
   userSupscrption: Subscription | undefined;
-  constructor(private _usersService:UsersService){}
+
+  constructor(private _usersService:UsersService,private messageService: MessageService){}
   
   ngOnInit(): void {
     this.getUsers()
@@ -33,7 +38,7 @@ export class UsersComponent implements OnInit, OnDestroy{
         this.usersList = data;
         console.log(data);
       } , error:(err)=>{
-        console.log(err);
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
       }
     })
   }
@@ -41,8 +46,8 @@ export class UsersComponent implements OnInit, OnDestroy{
  
 
     ngOnDestroy(): void {
-    if(this.userSupscrption){
-      this.userSupscrption.unsubscribe();
-    }
+      if(this.userSupscrption){
+        this.userSupscrption.unsubscribe();
+      }
   }
 }

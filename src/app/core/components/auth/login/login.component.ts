@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
@@ -11,7 +11,8 @@ import { MessageService } from 'primeng/api';
   imports: [ReactiveFormsModule ,ToastModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
-  providers: [MessageService]
+  providers: [MessageService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class LoginComponent implements OnDestroy {

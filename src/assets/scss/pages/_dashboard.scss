@@ -1,0 +1,87 @@
+@use '../abstracts' as *;
+.dashboard-page{
+    .card-count {
+  box-shadow: 0px 10px 34px -15px rgb(0,0,0, .25);
+  padding: rem(24);
+  border-radius: rem(8);
+  background-color: var(--white-color);
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    height: rem(6);
+    background-color: var(--primary-color-light);
+    position: absolute;
+    bottom: rem(-8);
+    right: rem(24);
+    left: rem(24);
+    border-end-start-radius: rem(8);
+    border-end-end-radius: rem(8);
+
+  }
+
+  i {
+    display: block;
+    width: rem(105);
+    height: rem(105);
+    background-color: var(--primary-color-light);
+    box-shadow: 0 16px 30px 3px rgb(var(primary-color)/ 25%);
+    border-radius: rem(20);
+    text-align: center;
+    line-height: rem(105);
+    color: var(--white-color);
+    font-size: rem(40);
+  }
+
+  h2 {
+    font-size: rem(32);
+    margin-bottom: rem(2);
+    
+  }
+
+  span {
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: 100%;
+    display: block;
+  }
+
+  &.color-2 {
+    &::after {
+      background: var(--secondary-color);
+    }
+
+    i {
+      background: var(--secondary-color);
+      box-shadow: 0 16px 30px 3px rgb(var(--secondary-color-dark)/ 25%);
+    }
+  }
+
+  
+}
+
+/* @include mqMax(xxxl) {
+  .card-count {
+    padding: rem(20);
+
+    i {
+      width: rem(75);
+      height: rem(75);
+      line-height: rem(82);
+
+      img {
+        width: rem(40);
+      }
+    }
+
+    h2 {
+      font-size:  var(--s-28);
+    }
+
+    span {
+      font-size:  var(--s-14);
+    }
+  }
+} */
+}
