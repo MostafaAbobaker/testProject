@@ -36,9 +36,10 @@ export class LoginComponent implements OnDestroy {
     if(this.loginForm.valid){
       
       localStorage.setItem('appTest-email', this.loginForm.value.email); // save data in local storage
-
-      this.permissionsService.loadPermissions(['ADMIN']); // Add Permissions Role 'ADMIN' : 'USER'
-      localStorage.setItem('appTest-role', 'ADMIN'); // Save Permissions Role in Local Storage
+      const emailVal = (this.loginForm.value.email || '').toLowerCase();
+      const initialRole = emailVal.includes('admin') ? 'ADMIN' : 'USER';
+      this.permissionsService.loadPermissions([initialRole]); // Add Permissions Role 'ADMIN' : 'USER'
+      localStorage.setItem('appTest-role', initialRole); // Save Permissions Role in Local Storage
       
       this.router.navigate(['/']);
 
