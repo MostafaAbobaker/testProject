@@ -37,6 +37,15 @@ npm install
 
 Directory highlights:
 
+## Permissions
+You can test the permissions by logging in with the following credentials:
+for Example:
+    - `admin@example.com` / `password123`
+    - `user@example.com` / `password123`
+
+- `ADMIN` – Full access to all features
+- `USER` – Limited access to view-only features
+
 # TestProject
 
 This project was generated using [Angular CLI](https://github.com/MostafaAbobaker/testProject) version 19.2.14.

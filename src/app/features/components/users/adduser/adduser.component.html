@@ -1,1 +1,25 @@
-<p>adduser works!</p>
+<section class="add-user-page">
+  <div class="page-title mb-4">
+    <h4 class="page-title-text me-auto">
+      @if(userID) { Edit User } @else { Add User }
+    </h4>
+  </div>
+  <div class="error-page h-75">
+    <div class="container">
+      <div class="card-widget">
+        <div class="error">
+          <div class="error-cantent">
+            <i
+              ><img src="./assets/imgs/commingSoon.svg" alt="" height="400"
+            /></i>
+            <h1><span>Comming Soon</span></h1>
+            <p>
+              We are working hard to add this feature. Please check back soon.
+            </p>
+            <a routerLink="/users" class="btn btn-primary">Go to users page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
