@@ -9,6 +9,13 @@
         padding: rem(24);
         border-radius: rem(24);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        img {
+            height: rem(400);
+             @include mqMax(md) {
+                height: auto;
+                width: 100%;
+             }
+        }
     }
 }
 .error-s {
