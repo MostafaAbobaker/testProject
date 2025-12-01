@@ -1,6 +1,45 @@
+# Test Project (Angular 19)
+
+- A standalone Angular application with PrimeNG (Aura theme),
+- Bootstrap,
+- SCSS architecture,
+- `OnPush` change detection,
+- role-based UI/route permissions via `ngx-permissions`.
+
+## Features
+- Standalone components and lazy-loaded routes
+- PrimeNG UI with Aura preset
+- Bootstrap for layout and utilities
+- SCSS architecture (abstracts/base/components/pages)
+- `OnPush` change detection with observable-driven templates
+- Role-based permissions (`ADMIN`, `USER`) for UI and routes
+
+## Prerequisites
+- Node.js 18+ (recommended)
+- npm 9+
+
+## Installation
+```bash
+npm install
+```
+
+## Scripts
+- `npm start` – ng s -o
+- `npm run build` – production build
+
+## Architecture
+- `src/app/app.config.ts` – bootstrap providers (router, HTTP, animations, PrimeNG, permissions)
+- `src/app/app.routes.ts` – application routes and guards
+- `src/app/core` – layout and auth shells
+- `src/app/features` – feature components (dashboard, users)
+- `src/app/shared` – shared components/services (navbar, sidebar, loading)
+- `src/assets/scss` – SCSS architecture (abstracts/base/components/pages)
+
+Directory highlights:
+
 # TestProject
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+This project was generated using [Angular CLI](https://github.com/MostafaAbobaker/testProject) version 19.2.14.
 
 ## Development server
 

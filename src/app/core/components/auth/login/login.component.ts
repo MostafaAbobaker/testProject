@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {  ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,10 @@ export class LoginComponent implements OnDestroy {
 
   loginSupscrption: Subscription | undefined;
 
-  constructor(private _authService: AuthService, private messageService: MessageService , private router: Router) { }
+  constructor(  private _authService: AuthService,
+                private messageService: MessageService ,
+                private router: Router,
+                private permissionsService: NgxPermissionsService) { }
 
   /* Login form group with email and password controls */
   loginForm: FormGroup = new FormGroup({
@@ -30,13 +34,22 @@ export class LoginComponent implements OnDestroy {
   /* Login method that checks form validity and subscribes to auth service login */
   login(){
     if(this.loginForm.valid){
+      
+      localStorage.setItem('appTest-email', this.loginForm.value.email); // save data in local storage
 
-      localStorage.setItem('appTest-email', this.loginForm.value.email);
+      this.permissionsService.loadPermissions(['ADMIN']); // Add Permissions Role 'ADMIN' : 'USER'
+      localStorage.setItem('appTest-role', 'ADMIN'); // Save Permissions Role in Local Storage
+      
       this.router.navigate(['/']);
-      this.loginSupscrption = this._authService.login(this.loginForm.value).subscribe({
-        next: (res) => {
+
+      /* Call auth service login method with form values */
+      /* this.loginSupscrption = this._authService.login(this.loginForm.value).subscribe({
+        next: (res : any) => {
           console.log(res);
           localStorage.setItem('appTest-token', res.token);
+          const role = res.role.toUpperCase();
+          this.permissionsService.loadPermissions([role]); // Add Permissions Role in NgxPermissions
+          localStorage.setItem('appTest-role', role); // Save Permissions Role in Local Storage
                 this.router.navigate(['/']);
 
         },
@@ -44,7 +57,7 @@ export class LoginComponent implements OnDestroy {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: err.message });
           console.log(err);
         }
-      })
+      }) */
     }
   }
 

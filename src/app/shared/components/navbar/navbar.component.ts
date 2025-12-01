@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { Router } from '@angular/router';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent {
 
   email: string = localStorage.getItem('appTest-email') || '';
 
-  constructor(private sidebarService: SidebarService , private router: Router) { }
+  constructor(private sidebarService: SidebarService , private router: Router, private permissionsService: NgxPermissionsService) { }
   
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
@@ -21,6 +22,7 @@ export class NavbarComponent {
 
   logout() {
     localStorage.clear();
+    this.permissionsService.flushPermissions();
     this.router.navigate(['./auth/login'])
   }
 }

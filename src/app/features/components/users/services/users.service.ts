@@ -11,7 +11,7 @@ export class UsersService {
   constructor(private _http:HttpClient) { }
 
   getUsers() {
-    return this._http.get<Users[]>('userss').pipe(
+    return this._http.get<Users[]>('users').pipe(
 
       catchError((error: HttpErrorResponse) => {
         

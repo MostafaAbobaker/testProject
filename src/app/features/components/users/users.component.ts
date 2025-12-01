@@ -6,10 +6,11 @@ import { Users } from './interface/users';
 import { RouterModule } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @Component({
   selector: 'app-users',
-  imports: [TableModule,RouterModule,ToastModule],
+  imports: [TableModule,RouterModule,ToastModule, NgxPermissionsModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.scss',
   providers: [MessageService]
